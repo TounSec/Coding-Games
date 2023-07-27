@@ -35,6 +35,7 @@ fn main() {
 
         let parts: Vec<_> = input_line.trim().split(';').collect();
 
+        // Check if all data is retrieved and stored in variables
         if parts.len() >= 6 {
             let id: i32 = parts[0].parse().unwrap();
             let name = parts[1].to_string();
@@ -49,9 +50,11 @@ fn main() {
     let mut closest_defibrillator_name = String::new();
     let mut min_distance = std::f64::INFINITY;
 
+    // Loop on the data of the vector which holds the information then calculates the distance for each defibrillator
     for (id, name, address, phone, long, lat) in &descriptions {
         let dist = calculate_distance(user_lon, user_lat, *long, *lat);
 
+        // If the distance is less, we store the name in a variable
         if dist < min_distance {
             min_distance = dist;
             closest_defibrillator_name = name.to_string();
