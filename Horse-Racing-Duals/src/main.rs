@@ -10,18 +10,15 @@ macro_rules! parse_input {
  **/
 fn main() {
     // Input number horse
-    println!("Number 🐎 : ");
     let mut input_line = String::new();
     io::stdin().read_line(&mut input_line).unwrap();
     let n = parse_input!(input_line, i32);
 
-    println!("{}", n);
 
     // Input pi horses
     let mut values_pi: Vec<i32> = Vec::new();
 
     for i in 0..n as usize {
-        println!("Pi value 🐎 {} : ", i+1);
         let mut input_line = String::new();
         io::stdin().read_line(&mut input_line).unwrap();
         let pi = parse_input!(input_line, i32);
