@@ -54,7 +54,7 @@ fn main() {
 
         if dist < min_distance {
             min_distance = dist;
-            closest_defibrillator_name.push_str(name);
+            closest_defibrillator_name = name.to_string();
         }
     }
     println!("{}", closest_defibrillator_name);
