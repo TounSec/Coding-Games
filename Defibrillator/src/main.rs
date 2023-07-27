@@ -4,7 +4,9 @@ use std::io;
 use std::str::FromStr;
 
 macro_rules! parse_input {
-    ($x:expr, $t:ident) => ($x.trim().parse::<$t>().unwrap())
+    ($x:expr, $t:ident) => {
+        $x.trim().parse::<$t>().unwrap()
+    };
 }
 
 /**
@@ -61,13 +63,11 @@ fn main() {
         }
     }
     println!("{}", closest_defibrillator_name);
-
 }
 
-fn calculate_distance(lon1: f64, lat1: f64, lon2: f64, lat2: f64) -> f64
-{
+fn calculate_distance(lon1: f64, lat1: f64, lon2: f64, lat2: f64) -> f64 {
     const EARTH_RADIUS: f64 = 6371.0;
     let x = (lon2 - lon1) * ((lat1 + lat2) / 2.0).cos();
     let y = lat2 - lat1;
-    (x*x + y*y).sqrt() * EARTH_RADIUS
+    (x * x + y * y).sqrt() * EARTH_RADIUS
 }
