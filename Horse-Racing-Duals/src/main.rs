@@ -28,9 +28,16 @@ fn main() {
         values_pi.push(pi);
     }
 
-    println!("{:?}", values_pi);
-    // Write an answer using println!("message...");
-    // To debug: eprintln!("Debug message...");
+    let mut min_dif = std::i32::MAX;
+    values_pi.sort();
 
-    println!("answer");
+    for i in 0..values_pi.len()-1 {
+        let dif = values_pi[i+1] - values_pi[i];
+
+        if dif < min_dif {
+            min_dif = dif
+        }
+    }
+
+    println!("\n 🎯{}", min_dif);
 }
