@@ -31,6 +31,7 @@ fn main() {
     let mut min_dif = std::i32::MAX;
     values_pi.sort();
 
+    // Calculation of the gaps between the elements of the vector
     for i in 0..values_pi.len()-1 {
         let dif = values_pi[i+1] - values_pi[i];
 
@@ -39,5 +40,5 @@ fn main() {
         }
     }
 
-    println!("\n 🎯{}", min_dif);
+    println!("{}", min_dif);
 }
