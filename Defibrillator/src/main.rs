@@ -2,7 +2,6 @@
 
 use std::io;
 use std::str::FromStr;
-use std::f64::consts::PI;
 
 macro_rules! parse_input {
     ($x:expr, $t:ident) => ($x.trim().parse::<$t>().unwrap())
@@ -65,18 +64,7 @@ fn main() {
 fn calculate_distance(lon1: f64, lat1: f64, lon2: f64, lat2: f64) -> f64
 {
     const EARTH_RADIUS: f64 = 6371.0;
-    let long1_rad = lon1.to_radians();
-    let lat1_rad = lat1.to_radians();
-    let long2_rad = lon2.to_radians();
-    let lat2_rad = lat2.to_radians();
-
-    let d_lon = long2_rad - long1_rad;
-    let d_lat = lat2_rad - lat1_rad;
-
-    let a = (d_lat / 2.0).sin().powi(2)
-        + lat1_rad.cos() * lat2_rad.cos() * (d_lon / 2.0).sin().powi(2);
-
-    let c = 2.0 * a.sqrt().atan2((1.0 - a).sqrt());
-    EARTH_RADIUS * c
-
+    let x = (lon2 - lon1) * ((lat1 + lat2) / 2.0).cos();
+    let y = lat2 - lat1;
+    (x*x + y*y).sqrt() * EARTH_RADIUS
 }
