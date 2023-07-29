@@ -34,7 +34,7 @@ fn main() {
     println!("Height : {}", y);
 
     // Lines node
-    let mut lines_nodes = Vec::new();
+    let mut nodes = Vec::new();
 
     for i in 0..y as usize {
         println!("Width characters : ");
@@ -42,23 +42,19 @@ fn main() {
         io::stdin().read_line(&mut input_line).unwrap();
         let line = input_line.trim().to_string(); // width characters, each either 0 or .
 
+        // node coordinate
         for (l, c) in line.chars().enumerate() {
             match c {
                 '0'     =>      {
-                    node = new NODE
+                    let node = NODE { x: l as i32, y: i as i32 };
+                    nodes.push(format!("{} {}", node.x, node.y))
                 },
-                '.'     =>      {},
-                _       =>      eprintln!("Error match lines nodes.\n"),
+                _       =>      {},
             }
         }
-
-        println!("{}", line);
-        lines_nodes.push(line);
     }
 
-    println!("{:?}", lines_nodes);
-
-
+    print!("{:?}", nodes);
 
     // Three coordinates: a node, its right neighbor, its bottom neighbor
     println!("0 0 1 0 0 1");
