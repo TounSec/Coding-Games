@@ -5,9 +5,11 @@
       <sourceFolder url="file://$MODULE_DIR$/Defibrillator/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Horse-Racing-Duals/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Shadows-Of-The-Knight-Episode-1/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/There-is-no-Spoon-Episode-1/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/Defibrillator/target" />
       <excludeFolder url="file://$MODULE_DIR$/Horse-Racing-Duals/target" />
       <excludeFolder url="file://$MODULE_DIR$/Shadows-Of-The-Knight-Episode-1/target" />
+      <excludeFolder url="file://$MODULE_DIR$/There-is-no-Spoon-Episode-1/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
